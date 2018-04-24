@@ -8,6 +8,7 @@
 #define NGX_HTTP_REQSTAT_MAX     50
 #define NGX_HTTP_REQSTAT_USER    NGX_HTTP_REQSTAT_MAX - NGX_HTTP_REQSTAT_RSRV
 
+#define ngx_http_request_received(r) (r->connection->buffer->last - r->connection->buffer->pos)
 
 #define variable_index(str, index)  { ngx_string(str), index }
 
