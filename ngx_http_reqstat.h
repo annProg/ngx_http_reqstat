@@ -69,6 +69,7 @@ struct ngx_http_reqstat_rbnode_s {
 
 
 typedef struct {
+    ngx_flag_t                   lazy;
     ngx_array_t                 *monitor;
     ngx_array_t                 *display;
     ngx_array_t                 *bypass;
@@ -102,6 +103,7 @@ typedef struct {
     ngx_uint_t                   recv;
     ngx_uint_t                   sent;
     ngx_array_t                  monitor_index;
+    ngx_array_t                  value_index;
     ngx_flag_t                   bypass;
     ngx_http_reqstat_conf_t     *conf;
 } ngx_http_reqstat_store_t;
