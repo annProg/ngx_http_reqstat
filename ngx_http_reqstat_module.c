@@ -858,11 +858,11 @@ ngx_http_reqstat_log_handler(ngx_http_request_t *r)
                 } else {
                     ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_BYTES_OUT,
                                            r->connection->sent);
-                    ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_BYTES_IN,
-                                           ngx_http_request_received(r));
-                    if (store) {
-                        store->recv = ngx_http_request_received(r);
-                    }
+                    //ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_BYTES_IN,
+                    //                       ngx_http_request_received(r));
+                    //if (store) {
+                    //    store->recv = ngx_http_request_received(r);
+                    //}
                 }
             }
 
@@ -875,9 +875,9 @@ ngx_http_reqstat_log_handler(ngx_http_request_t *r)
         }
 
         ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_REQ_TOTAL, 1);
-        ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_BYTES_IN,
-                               ngx_http_request_received(r)
-                                    - (store ? store->recv : 0));
+        //ngx_http_reqstat_count(fnode, NGX_HTTP_REQSTAT_BYTES_IN,
+        //                       ngx_http_request_received(r)
+        //                            - (store ? store->recv : 0));
 
         if (r->err_status) {
             status = r->err_status;
